@@ -26,7 +26,7 @@ function enterKey(e) {
       commands.push(command.innerHTML);
         git = commands.length;
         addLine("<span class='green'>Mono@Industries</span><span class='white'>:</span><span class='blue'>~/Mono/Terminal/Prompt$</span><span class='white2'> " + command.innerHTML + "</span>", "no-animation", 0, "4px");
-        commander(command.innerHTML.toLowerCase());
+        commander(command.innerHTML.toLowerCase().split(" "));
       command.innerHTML = "";
       textarea.value = "";
     }
@@ -47,7 +47,7 @@ function enterKey(e) {
   }
 
 function commander(cmd) {
-  switch (cmd.toLowerCase()) {
+  switch (cmd[0].toLowerCase()) {
     case "help":
       loopLines(help, "color2 margin");
       break;
@@ -79,6 +79,8 @@ Tab(email);
     case "banner":
       loopLines(banner, "", 0);
       break;
+    case "test":
+      addLine(`<h1>${cmd[1]}</h1>`)
     default:
       addLine("<span class=\"error\">Command Not Found.</span>.</span>", "error", 0);
       break;
