@@ -81,6 +81,7 @@ Tab(email);
       break;
     case "test":
       addLine(`<h1>${cmd[1]}</h1>`)
+      break;
     default:
       addLine("<span class=\"error\">Command Not Found.</span>.</span>", "error", 0);
       break;
