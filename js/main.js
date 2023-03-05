@@ -79,8 +79,9 @@ Tab(email);
     case "banner":
       loopLines(banner, "", 0);
       break;
-    case "test":
+    case "execute":
       addLine(`<h1>${cmd[1]}</h1>`);
+      addLine("Command Excuted.", "color2");
       break;
     default:
       addLine("<span class=\"error\">Command Not Found.</span>.</span>", "error", 0);
