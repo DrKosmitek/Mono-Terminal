@@ -13,7 +13,9 @@ setTimeout(function() {
   loopLines(banner, "", 0);
   textarea.focus();
 }, 0);
-
+window.addEventListener("keyup", function (event) {
+    textarea.focus();
+});
 window.addEventListener("keyup", enterKey);
 
 //init
@@ -83,6 +85,18 @@ Tab(email);
       addLine(`<h1>${cmd[1]}</h1>`);
       addLine("Command Excuted.", "color2");
       break;
+case "kys":
+      addLine("Kill Yourself", "colorrainbow");
+break;
+case "sex" :
+	addLine("Oh YEAH NIGGA", "colorrainbow");
+      setTimeout(function() {
+        window.open('https://pornhub.com');
+      }, 1000); 
+          break;
+case "reload":
+      window.location.reload();
+break;
     default:
       addLine("<span class=\"error\">Command Not Found.</span>.</span>", "error", 0);
       break;
